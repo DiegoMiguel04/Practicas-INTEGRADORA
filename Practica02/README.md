@@ -4,7 +4,7 @@ Repositorio de prácticas de la materia **Integradora**.
 
 El objetivo de esta práctica es instalar y configurar **Archify** como agente de modelado arquitectónico, utilizarlo mediante **Codex** con inteligencia artificial y generar un primer boceto interactivo de la arquitectura del Proyecto Integrador.
 
-[Diagrama de Arquitectura](https://diegomiguel04.github.io/Practicas-INTEGRADORA/index.html)
+[Diagrama de Arquitectura](https://diegomiguel04.github.io/Practicas-INTEGRADORA/Practica02/index.html)
 
 **Evidencia:**
 <img src="mobile-system-architecture.visual-check.1440x900.dark.png">
