@@ -9,111 +9,59 @@
     />
     <title>Spotify | Modelo Canvas</title>
     <style>
-      :root {
-        --spotify: #1ed760;
-        --spotify-dark: #169c46;
-        --ink: #171a1f;
-        --muted: #67707a;
-        --line: #dce2e7;
-        --paper: #ffffff;
-        --surface: #f5f7f8;
-        --tint: #eafaf0;
-      }
-
+      :root { color-scheme: light; --spotify: #1ed760; --spotify-dark: #087b39; --ink: #17211b; --muted: #637068; --line: #dce6de; --paper: #fff; --surface: #f2f7f2; --tint: #e8f8ed; }
       * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        color: var(--ink);
-        background: var(--surface);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      }
-
-      .page { max-width: 1600px; margin: 0 auto; padding: 36px 28px 42px; }
-      .hero {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 24px;
-        margin: 0 0 26px;
-      }
-      .brand { display: flex; align-items: center; gap: 14px; }
-      .mark {
-        display: grid;
-        place-items: center;
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        background: var(--spotify);
-        color: #062b13;
-        font-size: 26px;
-        font-weight: 900;
-      }
-      h1 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.6rem); letter-spacing: -0.055em; }
-      .subtitle, .date { margin: 5px 0 0; color: var(--muted); font-size: .95rem; }
-      .date { text-align: right; white-space: nowrap; }
-
-      .canvas {
-        display: grid;
-        grid-template-columns: 1fr 1.05fr 1.14fr 1fr 1fr;
-        grid-template-rows: minmax(235px, 1fr) minmax(235px, 1fr) minmax(220px, .88fr);
-        overflow: visible;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: var(--paper);
-        box-shadow: 0 18px 45px rgba(22, 37, 48, .09);
-      }
-      .block { position: relative; isolation: isolate; padding: 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; transition: box-shadow .2s ease; }
-      .block .details { position: absolute; top: 58px; left: 0; right: 0; z-index: 4; padding: 0 20px 20px; background-color: #fff; border: 1px solid var(--line); border-top: 0; border-radius: 0 0 12px 12px; box-shadow: 0 14px 30px rgba(22, 37, 48, .18); visibility: hidden; opacity: 0; transform: translateY(-6px); transition: opacity .18s ease, transform .18s ease, visibility .18s; }
-      .block:hover, .block:focus-within { z-index: 5; box-shadow: 0 12px 30px rgba(22, 37, 48, .12); }
+      body { margin: 0; color: var(--ink); background: radial-gradient(ellipse at 12% 0%, #d9f4e2 0, transparent 36rem), var(--surface); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .page { max-width: 1720px; margin: 0 auto; padding: 46px clamp(18px, 4vw, 64px) 56px; }
+      .hero { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 0 0 30px; }
+      .brand { display: flex; align-items: center; gap: 17px; }
+      .mark { display: grid; place-items: center; width: 54px; height: 54px; flex: 0 0 auto; border-radius: 18px; background: #14251a; color: var(--spotify); font-size: 28px; font-weight: 900; box-shadow: 0 8px 22px #102f1c26; }
+      h1 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.7rem); line-height: 1.04; letter-spacing: -.055em; }
+      .subtitle, .date { margin: 8px 0 0; color: var(--muted); font-size: .94rem; }
+      .date { padding: 11px 15px; border: 1px solid #d3e4d6; border-radius: 14px; background: #ffffffad; text-align: right; line-height: 1.45; white-space: nowrap; }
+      .canvas { display: grid; grid-template-columns: 1fr 1.05fr 1.14fr 1fr 1fr; grid-template-rows: minmax(245px, 1fr) minmax(245px, 1fr) minmax(215px, .86fr); gap: 12px; }
+      .block { position: relative; isolation: isolate; padding: 21px; overflow: visible; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); box-shadow: 0 3px 12px #14291a08; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+      .block .details { position: absolute; top: 52px; left: -1px; right: -1px; z-index: 4; padding: 7px 20px 19px; border: 1px solid #cfe2d2; border-top: 0; border-radius: 0 0 16px 16px; background: #fff; box-shadow: 0 16px 30px #17341d20; visibility: hidden; opacity: 0; transform: translateY(-5px); transition: opacity .18s ease, transform .18s ease, visibility .18s; }
+      .block:hover, .block:focus-within { z-index: 5; transform: translateY(-2px); border-color: #a9d7b5; box-shadow: 0 12px 28px #17341d18; }
       .block:hover .details, .block:focus-within .details { visibility: visible; opacity: 1; transform: translateY(0); }
       .block:hover .summary, .block:focus-within .summary { visibility: hidden; }
       .block .summary li { margin-bottom: 8px; }
-      .block:focus-within { outline: 2px solid var(--spotify-dark); outline-offset: -2px; }
-      .block h2 {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin: 0 0 13px;
-        color: #15191d;
-        font-size: .82rem;
-        letter-spacing: .075em;
-        text-transform: uppercase;
-      }
-      .block h2::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--spotify); }
+      .block:focus-visible { outline: 3px solid var(--spotify-dark); outline-offset: 2px; }
+      .block h2 { display: flex; align-items: center; gap: 9px; margin: 0 0 16px; color: #25332a; font-size: .77rem; letter-spacing: .085em; text-transform: uppercase; }
+      .block h2::before { content: ""; width: 9px; height: 9px; flex: 0 0 auto; border-radius: 3px; background: #80c994; transform: rotate(45deg); }
       ul { margin: 0; padding: 0; list-style: none; }
-      li { position: relative; margin: 0 0 9px; padding-left: 13px; font-size: .91rem; line-height: 1.35; }
-      li::before { content: ""; position: absolute; top: .53em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: #aeb8c0; }
+      li { position: relative; margin: 0 0 10px; padding-left: 14px; color: #3f4d43; font-size: .87rem; line-height: 1.45; }
+      li::before { content: ""; position: absolute; top: .58em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: #9baea0; }
       li:last-child { margin-bottom: 0; }
 
       .partners { grid-column: 1; grid-row: 1 / span 2; }
       .activities { grid-column: 2; grid-row: 1; }
       .resources { grid-column: 2; grid-row: 2; }
-      .value { grid-column: 3; grid-row: 1 / span 2; background: linear-gradient(145deg, #effcf4, #ffffff 72%); }
+      .value { grid-column: 3; grid-row: 1 / span 2; border-color: #b8e5c3; background: linear-gradient(145deg, #e5f8eb, #ffffff 78%); }
       .value h2 { color: var(--spotify-dark); }
       .relationships { grid-column: 4; grid-row: 1; }
       .channels { grid-column: 4; grid-row: 2; }
       .segments { grid-column: 5; grid-row: 1 / span 2; }
-      .costs { grid-column: 1 / span 3; grid-row: 3; border-bottom: 0; }
-      .revenue { grid-column: 4 / span 2; grid-row: 3; border-right: 0; border-bottom: 0; }
+      .costs { grid-column: 1 / span 3; grid-row: 3; }
+      .revenue { grid-column: 4 / span 2; grid-row: 3; }
       .split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-      .tag { display: inline-block; margin: 1px 4px 5px 0; padding: 5px 8px; border-radius: 999px; background: var(--tint); color: #14763a; font-size: .76rem; font-weight: 650; }
+      .tag { display: inline-block; margin: 1px 4px 5px 0; padding: 5px 9px; border: 1px solid #d7eddd; border-radius: 999px; background: var(--tint); color: #14763a; font-size: .73rem; font-weight: 650; }
       .note { margin-top: 16px; color: var(--muted); font-size: .78rem; line-height: 1.4; }
 
       @media (max-width: 960px) {
         .canvas { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
-        .block { min-height: 220px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .block { min-height: 220px; }
         .partners, .activities, .resources, .value, .relationships, .channels, .segments, .costs, .revenue { grid-column: auto; grid-row: auto; }
         .value, .segments { min-height: 300px; }
-        .costs, .revenue { border-bottom: 0; }
+        .costs, .revenue { min-height: 200px; }
       }
       @media (max-width: 600px) {
-        .page { padding: 25px 16px; }
-        .hero { align-items: flex-start; flex-direction: column; gap: 10px; }
+        .page { padding: 25px 16px 36px; }
+        .hero { align-items: flex-start; flex-direction: column; gap: 14px; }
         .date { text-align: left; }
-        .canvas { grid-template-columns: 1fr; border-radius: 13px; }
+        .canvas { grid-template-columns: 1fr; gap: 10px; }
 
-        .block { min-height: 0; border-right: 0; }
-        .revenue { border-bottom: 0; }
+        .block { min-height: 0; }
         .split { grid-template-columns: 1fr; }
       }
       @media print {
@@ -136,7 +84,7 @@
           <div class="mark" aria-hidden="true">≋</div>
           <div>
             <h1>Spotify · Modelo Canvas</h1>
-            <p class="subtitle">Aplicación multiplataforma de música, podcasts y audiolibros</p>
+            <p class="subtitle">Aplicaci�n multiplataforma de música, podcasts y audiolibros</p>
           </div>
         </div>
         <p class="date">Business Model Canvas<br />Septiembre de 2026</p>
@@ -168,11 +116,11 @@
         </div></article>
 
         <article class="block resources" tabindex="0">
-          <h2>Recursos clave</h2><ul class="summary"><li>Catálogo, licencias y metadatos.</li><li>Marca y comunidad global de oyentes.</li><li>Algoritmos, datos, infraestructura y equipos especializados.</li></ul><div class="details">
+          <h2>Recursos clave</h2><ul class="summary"><li>Cat�logo, licencias y metadatos.</li><li>Marca y comunidad global de oyentes.</li><li>Algoritmos, datos, infraestructura y equipos especializados.</li></ul><div class="details">
           <ul>
             <li>Marca global y base de usuarios.</li>
             <li>Licencias, catálogo y metadatos de contenido.</li>
-            <li>Algoritmos, datos de escucha e infraestructura tecnológica.</li>
+            <li>Algoritmos, datos de escucha e infraestructura tecnol�gica.</li>
             <li>Apps para móvil, web, escritorio, TV y automóvil.</li>
             <li>Equipos de producto, datos, ventas y relaciones con creadores.</li>
           </ul>
@@ -188,7 +136,7 @@
             <li>Una plataforma de alcance global para artistas, creadores y anunciantes.</li>
           </ul>
           <div class="note">
-            <span class="tag">Personalización</span><span class="tag">Multiplataforma</span><span class="tag">Freemium</span><span class="tag">Descubrimiento</span>
+            <span class="tag">Personalizaci�n</span><span class="tag">Multiplataforma</span><span class="tag">Freemium</span><span class="tag">Descubrimiento</span>
           </div>
         </div></article>
 
@@ -197,7 +145,7 @@
           <ul>
             <li>Autoservicio digital y onboarding guiado.</li>
             <li>Experiencia personalizada basada en hábitos de escucha.</li>
-            <li>Notificaciones, correos y campañas de retención.</li>
+            <li>Notificaciones, correos y campañas de retenci�n.</li>
             <li>Soporte en línea, centro de ayuda y comunidad.</li>
             <li>Planes compartidos: Duo, Familiar y Estudiantes.</li>
           </ul>
@@ -227,10 +175,10 @@
         </div></article>
 
         <article class="block costs" tabindex="0">
-          <h2>Estructura de costos</h2><ul class="summary"><li>El mayor componente: licencias y regalías de contenido.</li><li>Tecnología para producto, nube, datos y distribución.</li><li>Marketing, personal, soporte y acuerdos comerciales.</li></ul><div class="details">
+          <h2>Estructura de costos</h2><ul class="summary"><li>El mayor componente: licencias y regalías de contenido.</li><li>Tecnolog�a para producto, nube, datos y distribución.</li><li>Marketing, personal, soporte y acuerdos comerciales.</li></ul><div class="details">
           <div class="split">
             <ul>
-              <li>Regalías y pagos por licencias de música y contenido.</li>
+              <li>Regal�as y pagos por licencias de música y contenido.</li>
               <li>Costos de adquisición o producción de podcasts y audiolibros.</li>
               <li>Infraestructura cloud, CDN, almacenamiento y transmisión.</li>
             </ul>
@@ -251,7 +199,7 @@
             </ul>
             <ul>
               <li>Publicidad de audio, video, display y patrocinios para usuarios Free.</li>
-              <li>Ingresos por audiolibros, cuando estén disponibles en el mercado.</li>
+              <li>Ingresos por audiolibros, cuando están disponibles en el mercado.</li>
             </ul>
           </div>
         </div></article>
