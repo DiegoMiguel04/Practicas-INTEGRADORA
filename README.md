@@ -6,4 +6,5 @@ En este repositorio se subiran las practicas realizadas en la materia de Integra
 |Número|Nombre|Firmas|Estatus|
 |---|---|---|---|
 |01|Metodología de Evaluación de la Asignatura|5|Finalizada ✅|
-|02|[Boceto de Arquitectura de Proyecto Integrador con Achify](https://github.com/DiegoMiguel04/Practicas-INTEGRADORA/blob/master/Practica02/README.md)|24|Finalizada ✅|
+|02|[Boceto de Arquitectura de Proyecto Integrador con Archify](https://github.com/DiegoMiguel04/Practicas-INTEGRADORA/blob/master/Practica02/README.md)|24|Finalizada ✅|
+|03|[Boceto de Modelo Canvas con Archify](https://github.com/DiegoMiguel04/Practicas-INTEGRADORA/blob/master/Practica03/README.md)|10|Finalizada ✅|
