@@ -45,6 +45,3 @@ La especificación `spotify-sequence.json` se validó y entregó con Archify com
 
 Los mockups son sketches de interfaz creados para explicar el flujo académico. Representan patrones y contenido ficticio; no son capturas oficiales ni describen todas las funciones o pantallas actuales de Spotify.
 
-## Versión horizontal
-
-También se incluye [`spotify-mockups-horizontal.html`](spotify-mockups-horizontal.html), una alternativa apaisada de seis columnas por tres filas serpenteantes. Cada pantalla ocupa el primer plano con proporción de captura móvil; la etiqueta del rol aparece en una esquina y el nombre y la descripción se revelan debajo al pasar el cursor. Al seleccionar una pantalla se abre una vista ampliada con la captura completa y, a su derecha, la acción, elementos visibles y contexto de los pasos anterior y siguiente. Líneas animadas con flechas conectan las pantallas. Los filtros reacomodan en secuencia continua las pantallas visibles. El tablero puede recorrerse verticalmente para ver las capturas completas y lateralmente en ventanas estrechas. La versión vertical original permanece sin cambios.
